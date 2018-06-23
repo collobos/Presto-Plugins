@@ -29,7 +29,7 @@ function lookupPrinters()
 {
     let printer = (
     {
-        bpp: 8,						// 8 bits monochrome,
+        bpp: 8,                     // 8 bits monochrome,
                                     // 24 bits color
         note: "",
         info: "Presto Virtual Printer",
@@ -55,24 +55,26 @@ function lookupPrinters()
         ],
         media_default: "na_letter_8.5x11in",
         copy: 99,
-        quality_default: 4,       // draft = 3, normal = 4, high = 5
+        quality_default: 4,       // draft  = 3,
+		                          // normal = 4,
+		                          // high   = 5
         quality_supported:
         [
             3,
             4,
             5
         ],
-        orientation_default: 3,   // portrait = 3,
-                                  // landscape = 4,
+        orientation_default: 3,   // portrait          = 3,
+                                  // landscape         = 4,
                                   // reverse_landscape = 5,
-                                  // reverse_portrait = 6
+                                  // reverse_portrait  = 6
         orientation_supported:
         [
             3,
             4
         ],
-        side_default: 0,		  // none = 0,
-                                  // long_edge = 1,
+        side_default: 0,          // none       = 0,
+                                  // long_edge  = 1,
                                   // short_edge = 2
         side_supported:
         [
@@ -80,27 +82,27 @@ function lookupPrinters()
             1,
             2
         ],
-        state: 3,				  // idle = 3,
+        state: 3,                 // idle       = 3,
                                   // processing = 4,
-                                  // stopped = 5
+                                  // stopped    = 5
 
-        reasons: 0				  // none					    = 0x0000,
-                                  // other					    = 0x0001,
-                                  // cover_open				    = 0x0002,
-                                  // input_tray_missing		    = 0x0004,
-                                  // marker_supply_empty		= 0x0008,
-                                  // marker_supply_low		    = 0x0010,
-                                  // marker_waste_almost_full	= 0x0020,
-                                  // marker_waste_full		    = 0x0040,
-                                  // media_empty				= 0x0080,
-                                  // media_jam				    = 0x0100,
-                                  // media_low				    = 0x0200,
-                                  // media_needed				= 0x0400,
-                                  // offline					= 0x0800,
-                                  // paused					    = 0x1000,
-                                  // spool_area_full			= 0x2000,
-                                  // toner_empty				= 0x4000,
-                                  // toner_low				    = 0x8000
+        reasons: 0                // none                       = 0x0000,
+                                  // other                      = 0x0001,
+                                  // cover_open                 = 0x0002,
+                                  // input_tray_missing         = 0x0004,
+                                  // marker_supply_empty        = 0x0008,
+                                  // marker_supply_low          = 0x0010,
+                                  // marker_waste_almost_full   = 0x0020,
+                                  // marker_waste_full          = 0x0040,
+                                  // media_empty                = 0x0080,
+                                  // media_jam                  = 0x0100,
+                                  // media_low                  = 0x0200,
+                                  // media_needed               = 0x0400,
+                                  // offline                    = 0x0800,
+                                  // paused                     = 0x1000,
+                                  // spool_area_full            = 0x2000,
+                                  // toner_empty                = 0x4000,
+                                  // toner_low                  = 0x8000
 
     } );
 
@@ -123,13 +125,13 @@ function startJob( user, dest, job, file )
      *
      * Valid states are:
      *
-     * pending		= 3,
-     * held			= 4,
-     * processing	= 5,
-     * stopped		= 6,
-     * cancelled	= 7,
-     * aborted		= 8,
-     * completed	= 9
+     * pending       = 3,
+     * held          = 4,
+     * processing    = 5,
+     * stopped       = 6,
+     * cancelled     = 7,
+     * aborted       = 8,
+     * completed     = 9
      */
 
     job.state = 9;
@@ -175,7 +177,7 @@ else if ( process.argv[ 2 ] === '--start-job' )
     {
         if ( !err )
         {
-            let ret	= startJob( info.user, info.dest, info.job, info.file );
+            let ret = startJob( info.user, info.dest, info.job, info.file );
 
             console.log( JSON.stringify( ret ) );
 

@@ -56,8 +56,8 @@ function lookupPrinters()
         media_default: "na_letter_8.5x11in",
         copy: 99,
         quality_default: 4,       // draft  = 3,
-		                          // normal = 4,
-		                          // high   = 5
+                                  // normal = 4,
+                                  // high   = 5
         quality_supported:
         [
             3,
